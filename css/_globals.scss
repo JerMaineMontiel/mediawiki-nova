@@ -1,0 +1,48 @@
+/* defaults.scss
+  CSS file for any default variables and fonts
+  ADD ANY DEFAULT VARIABLES TO THIS FILE, like colors and such.
+*/
+@import 'fonts/init';
+//color palette
+$black: #2b2929;
+$white: #f3f6fb;
+$gray: #919191;
+$orange: #E07000;
+$green: #007B0E;
+
+/* GLOBALS : add any global CSS here */
+body{
+  @extend .proximanova;
+  position: relative;
+  background-color: $black;
+  color: $black;
+  min-height: 100vh;
+}
+
+a { color: $orange; }
+a:hover { color: $green; }
+a:visited { color: $green; }
+
+ol {
+  list-style-type: upper-roman; padding-left: 10px;
+  ol { list-style-type: upper-alpha; }
+  ol ol { list-style-type: lower-roman; }
+  ol ol ol { list-style-type: lower-alpha; }
+}
+
+@mixin heading-size($base, $delta) {
+  h1 { font-size: $base; }
+  h2 { font-size: $base - $delta; }
+  h3 { font-size: $base - ($delta * 2); }
+  h4 { font-size: $base - ($delta * 3); }
+}
+
+@include media-breakpoint-up(md) {
+  @include heading-size(40px, 8px);
+}
+
+//all headers will be uppercase
+h1, h2, h3, h4 {
+  @extend .proximanova_semibold;
+  text-transform: uppercase;
+}

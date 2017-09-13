@@ -1,0 +1,14 @@
+.sidebar-container { @extend .col-md-3; position: relative; }
+.sidebar-pane {
+  padding-top: 20px;
+  border-right: 1px $black;
+  max-width: inherit;
+  text-transform: uppercase;
+
+  @include media-breakpoint-up(md) { position: fixed; }
+  @include media-breakpoint-down(sm) {
+    padding-top: 10px;
+    background-color: $white;
+    z-index: 999;
+  }
+}

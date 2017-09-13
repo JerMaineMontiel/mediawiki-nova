@@ -1,0 +1,71 @@
+/* article_modules.scss
+  file for article modules (sidebar, reading pane)
+*/
+
+//framework
+@import '../dependencies/init';
+//SCSS files
+@import '../globals';
+@import '../components/init';
+
+//import any modules you may need
+@import '../modules/header-footer';
+@import '../modules/sidebar-pane';
+@import '../modules/reading-pane';
+
+//main is the container that houses the modules
+.main {
+  //fluid container to make it full-width
+  @extend .container-fluid;
+  background-color: $white;
+  padding-bottom: 10vh;
+  min-height: 100vh;
+
+  box-shadow: 0 12px 6px #000000;
+}
+
+.sidebar-pane {
+
+  ol { color: $gray; }
+  a, a:visited { color: $gray; text-decoration: none; }
+  a:hover { color: $black; text-decoration: none; }
+
+  .action { @extend .hidden-md-up; }
+  .school { @extend .hidden-sm-down; font-size: 3em; display: block; text-align: center; }
+  .sidebar_menu { padding-bottom: 10px; }
+  #toc #title, #toolbox { @extend .hidden-sm-down; }
+  .sidebar_menus { @extend .container; @extend .collapse; @extend .show; }
+  .sidebar_menu_list { padding-left: 15px; }
+}
+
+//reading-pane is the section where the content is rendered
+.reading-pane {
+  //title section includes the namespace and category buttons, the Edit button, and
+  //the text for redirects and last modified timestamp.
+  .title_section {
+    h1 { @extend .d-inline-block; margin: 0; }
+    .namespace, .category { margin-right: 10px; }
+    .action { @extend .hidden-sm-down; position: absolute; right: 0; }
+
+    .catlinks {
+      @extend .d-flex;
+      position: relative;
+      bottom: 0;
+      margin: 5px 0;
+      ul { padding-left: 5px; }
+      li{ @extend .d-inline-block; @extend .category; }
+    }
+
+    .namelinks {
+      @extend .d-flex;
+      position: relative;
+      bottom: 0;
+      margin: 5px 0;
+      ul { padding: 0; margin-bottom: 5px; }
+      li{ @extend .d-inline-block; @extend .namespace; }
+    }
+  }
+
+  .lm { @extend .text-muted; }
+  .red, .lm { @extend .d-inline-block; padding: 2px 2px; }
+}

@@ -1,0 +1,60 @@
+/* buttons.scss
+  SASS file for the site's buttons
+
+  Components are made by using the available Bootstrap components to build more semantic classes. So if you need an actionable button (like the Edit button), just use the .actionable class.
+
+  Any tweaks you want to make to Bootstrap components, do that first.
+*/
+
+//all buttons use this base class
+.btn {
+  @extend .proximanova;
+  @extend .rounded-0;
+  padding: 3px 13px;
+  text-transform: uppercase;
+  font-size: .75em;
+  line-height: 1;
+
+  :hover { background-color: $orange; }
+}
+
+/*------------------------------------------
+  STRONGLY SUGGEST CREATING MIXINS for each new button type
+  i.e. button is a normal Bootstrap button with colored background,
+  button-outline (obviously) has an outline
+--------------------------------------------*/
+
+//button(background color)
+@mixin button($bkg) {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .border-0;
+  background-color: $bkg;
+  color: $white;
+  //if an <a> tag happens to end up in a button, we want to change the color
+  a, a:hover { color: $white; background-color: none; text-decoration: none; }
+}
+
+//button-outline(text/outline color)
+@mixin button-outline($color) {
+  @extend .btn;
+  @extend .btn-outline-primary;
+  background-color: $white;
+  color: $color;
+  border-color: $color;
+  //if an <a> tag happens to end up in a button, we want to change the color
+  a { color: $black; }
+}
+
+/*------------------------------------------
+BE SEMANTIC AS POSSIBLE when creating new buttons
+--------------------------------------------*/
+.namespace { @include button($black); }
+
+.category { @include button-outline($black); }
+
+.ok { @include button($green); }
+
+.cancel { @include button-outline($gray); }
+
+.action { @include button($orange); }

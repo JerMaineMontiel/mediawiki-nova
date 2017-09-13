@@ -1,0 +1,10 @@
+/* main.scss
+  entry point for SASS build. Imports all pages needed for the site
+*/
+
+//framework
+@import 'dependencies/init';
+//SCSS files
+@import 'globals';
+@import 'components/init';
+@import 'pages/article';

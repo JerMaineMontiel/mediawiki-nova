@@ -1,0 +1,43 @@
+/* header-footer.scss
+  file for the header and footer CSS
+*/
+
+@mixin fixed-footer($h, $p) {
+
+  @include media-breakpoint-up(md) {
+    body { margin-bottom: $h + $p; }
+    footer { min-height: $h; width: 100%; position: fixed; bottom: 0; }
+  }
+}
+
+@include fixed-footer(20vh, 5vh);
+
+.header {
+  @extend .navbar;
+  @extend .nav;
+  @extend .justify-content-end;
+  z-index: 9999;
+
+  background-color: $black;
+  color: $white;
+
+  .school { @extend .navbar-brand; }
+  .nav_buttons { text-align: right; }
+  .item { @extend .nav-item; }
+}
+
+.footer-container { @extend .container; padding: 15px; }
+.footer-section { min-height: inherit; }
+.footer {
+  z-index: -1;
+  background-color: $black;
+  color: $white;
+  text-transform: uppercase;
+
+  li { list-style-type: none; }
+
+  .title { color: $gray; }
+  .footer_nav { @extend .col-md-2; list-style-type: none; }
+  .footer_help { @extend .col-md-2; }
+  .footer_misc { @extend .col-md-8; text-align: right; }
+}

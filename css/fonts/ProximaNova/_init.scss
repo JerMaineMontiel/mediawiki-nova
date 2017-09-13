@@ -1,0 +1,74 @@
+/*----------------------------------
+ProximaNova/init.scss
+create all @font-face blocks and classes in this file
+----------------------------------*/
+
+/* FONTS - @font-face for each style of the font (normal, italic, bold) */
+@font-face {
+  //NORMAL
+  font-family: "Proxima Nova";
+  src: url('ProximaNova-Regular.otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  //NORMAL ITALIC
+  font-family: "Proxima Nova";
+  src: url('ProximaNova-RegularIt.otf');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  //SEMIBOLD
+  font-family: "Proxima Nova";
+  src: url('ProximaNova-Semibold.otf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  //SEMIBOLD ITALIC
+  font-family: "Proxima Nova";
+  src: url('ProximaNova-SemiboldIt.otf');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  //BOLD
+  font-family: "Proxima Nova";
+  src: url('ProximaNova-Bold.otf');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  //BOLD ITALIC
+  font-family: "Proxima Nova";
+  src: url('ProximaNova-BoldIt.otf');
+  font-weight: 800;
+  font-style: italic;
+}
+
+//default class and individual weight glasses for ease of use
+//use the name of the font, or an easily identifiable abbreviation
+.proximanova {
+  font-family: Proxima Nova, Arial, sans-serif;
+}
+
+.proximanova_normal {
+  font-family: Proxima Nova, Arial, sans-serif;
+  font-weight: 400;
+}
+
+.proximanova_semibold {
+  font-family: Proxima Nova, Arial, sans-serif;
+  font-weight: 700;
+}
+
+.proximanova_bold {
+  font-family: Proxima Nova, Arial, sans-serif;
+  font-weight: 800;
+}

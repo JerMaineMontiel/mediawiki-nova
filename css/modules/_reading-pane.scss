@@ -1,0 +1,14 @@
+.reading-pane {
+  @extend .col-md-9;
+  padding-top: 20px;
+
+  .content {
+    padding-top: 20px;
+    h1 { display: block; border-bottom: 1px solid $black; }
+    .article_img { @extend .img-fluid; @extend .mx-auto; }
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-right: 10vw;
+  }
+}
